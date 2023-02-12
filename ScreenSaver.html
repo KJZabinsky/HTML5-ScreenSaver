@@ -1,10 +1,60 @@
-
 <!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      .loading {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: opacity 0.5s;
+      }
+      .loading::after {
+        content: "";
+        display: block;
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        border: 10px solid #0084ff;
+        border-color: #0084ff transparent #0084ff transparent;
+        animation: spin 1.5s linear infinite;
+        transition: opacity 0.5s;
+      }
+      @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+      .content {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="loading">
+    </div>
+    <div class="content">
     <style>
       h1 {
         text-align: center;
         color: white;
         text-shadow: 0 0 5px #fff, 0 0 10px #e60073;
+      }
+    </style>
+        <style>
+      .textarea1 {
+        width: 50%;
+        height: 10px;
+        font-size: 16px;
+        font-family: Arial;
+        padding: 10px;
+        border-radius: 5px;
+        border: 3px solid #293437;
+        resize: none;
       }
     </style>
 <style>
@@ -91,7 +141,7 @@
   </head>
   <body>
     <center>
-    <h1 class="text3">Screen Saver 5.1.4</h1>
+    <h1 class="text3">Screen Saver 5.2.5</h1>
     </center>
     <script>
       function moveWindow(index) {
@@ -140,7 +190,17 @@
   <p class="text">1. Disable Popups<p><center>
   <p class="text">2. Check Version<p><center>
   <p class="text">3. Click Start<p><center>
-  <p class="text">Remminder: Do not Minimize Window<p><center>
+  <p class="text">Remminder: Do not Minimize Window / Only drag thw window to the bottom right corner.<p><center>
   <br>
-  <p class="text">HTML5 Build X.NoRAYTC.THJSD.7KB5<p><div><center>
+      <p class="text">HTML5 Build X.NoRAYTC.THJSD.7KB5<p><div><center>
+      <p class="text">--------------------------<p><center>
+</html>
+    </div>
+    <script>
+      setTimeout(function() {
+        document.querySelector('.loading').style.display = 'none';
+        document.querySelector('.content').style.display = 'block';
+      }, 3000);
+    </script>
+  </body>
 </html>
